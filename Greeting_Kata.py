@@ -14,7 +14,11 @@ def greet(name):
             if n.isupper():
                 upperName = n
                 name.remove(n)
-            if n.find(',') != -1:
+            if n.find('\"') != -1:
+                newString = n.replace('\"', '')
+                name.remove(n)
+                name.append(newString)
+            elif n.find(',') != -1:
                 sepNames = n.split(', ')
                 name.remove(n)
                 for s in sepNames:
