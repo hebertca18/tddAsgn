@@ -28,3 +28,8 @@ class TestList:
         name = ["Amy", "Brian", "Charlotte"]
         ex = "Hello, Amy, Brian, and Charlotte."
         assert ex == greet(name)
+
+    def test_06(self):
+        name = ["Amy", "BRIAN", "Charlotte"]
+        ex = "Hello, Amy and Charlotte. AND HELLO BRIAN!"
+        assert ex == greet(name)

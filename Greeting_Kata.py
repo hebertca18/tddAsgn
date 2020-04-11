@@ -8,9 +8,19 @@ def greet(name):
             string = 'Hello, ' + str(name) + '.'
     else:
         string = 'Hello, '
+        upperName = ''
+        for n in name:
+            if n.isupper():
+                upperName = n
+                name.remove(n)
         for i in range(len(name)):
             if i == len(name)-1:
-                string += ' and '
-            string = string + name[i]
+                string = string + 'and ' + name[i]
+            elif len(name) < 3 and i != len(name)-1:
+                string = string + name[i] + ' '
+            else:
+                string = string + name[i] + ', '
         string = string + '.'
+        if upperName is not '':
+            string = string + ' AND HELLO ' + upperName + '!'
     return string
